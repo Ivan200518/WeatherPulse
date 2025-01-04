@@ -66,7 +66,7 @@ fun ListItem(item :WeatherModel,currentDay: MutableState<WeatherModel>) {
                 Text(text = item.time, color = Color.White)
                 Text(text = item.condition, color = Color.White)
             }
-            Text(text = item.tempCurrent.ifEmpty { item.maxTemp + "/" + item.minTemp },
+            Text(text = item.tempCurrent.ifEmpty { item.maxTemp.toFloat().toInt().toString() + "/" + item.minTemp.toFloat().toInt().toString() },
                 color = Color.White,
                 style = TextStyle(fontSize = 25.sp))
             AsyncImage(
