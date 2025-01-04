@@ -10,7 +10,8 @@ data class WeatherModel(
     val imageCondition: String,
     val maxTemp : String,
     val minTemp : String,
-    val hours : String
+    val hours : String,
+    val speedOfWind: String
 )
 
 
