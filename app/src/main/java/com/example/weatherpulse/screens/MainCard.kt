@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.BottomNavigation
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -92,6 +93,7 @@ fun MainCard(
                             "°C/${currentDay.value.minTemp.toFloat().toInt()}",
                     style = TextStyle(fontSize = 65.sp),
                     color = Color.White
+
                 )
                 Text(
                     text = currentDay.value.condition,
@@ -110,6 +112,7 @@ fun MainCard(
                             painter = painterResource(id = R.drawable.icon),
                             contentDescription = "im3",
                             tint = Color.White
+
                         )
                     }
                     Text(

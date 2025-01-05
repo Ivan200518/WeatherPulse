@@ -11,7 +11,7 @@ data class WeatherModel(
     val maxTemp : String,
     val minTemp : String,
     val hours : String,
-    val speedOfWind: String
+
 
 
 
