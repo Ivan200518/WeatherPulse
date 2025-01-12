@@ -1,6 +1,4 @@
-package com.example.weatherpulse.data
-
-import android.service.notification.Condition
+package com.example.weatherpulse.domain.screens.models
 
 data class WeatherModel(
     val city: String,

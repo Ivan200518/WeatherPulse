@@ -1,4 +1,4 @@
-package com.example.weatherpulse
+package com.example.weatherpulse.presentaion
 
 import android.content.Context
 import android.os.Bundle
@@ -23,10 +23,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.weatherpulse.data.WeatherModel
-import com.example.weatherpulse.screens.DialogSearch
-import com.example.weatherpulse.screens.MainCard
-import com.example.weatherpulse.screens.TableLayout
+import com.example.weatherpulse.R
+import com.example.weatherpulse.domain.screens.models.WeatherModel
+import com.example.weatherpulse.domain.screens.DialogSearch
+import com.example.weatherpulse.domain.screens.MainCard
+import com.example.weatherpulse.domain.screens.TableLayout
 
 import com.example.weatherpulse.ui.theme.WeatherPulseTheme
 import org.json.JSONObject
@@ -46,8 +47,10 @@ class MainActivity : ComponentActivity() {
                 }
 
                 val currentDay = remember{
-                    mutableStateOf(WeatherModel("","","0.0","",
-                        "","0.0","0.0",""))
+                    mutableStateOf(
+                        WeatherModel("","","0.0","",
+                        "","0.0","0.0","")
+                    )
                 }
                 if (dialogState.value){
                     DialogSearch(dialogState, onSubmit = {
@@ -90,7 +93,7 @@ fun GreetingPreview() {
     }
 }
 private fun getData(city: String, context: Context, daysList : MutableState<List<WeatherModel>>,
-currentDay: MutableState<WeatherModel>){
+                    currentDay: MutableState<WeatherModel>){
     val url = "https://api.weatherapi.com/v1/forecast.json?key=$API_KEY&q=$city&days=3&aqi=no&alerts=no"
     val queue = Volley.newRequestQueue(context)
     val stringRequest = StringRequest(Request.Method.GET,url,{

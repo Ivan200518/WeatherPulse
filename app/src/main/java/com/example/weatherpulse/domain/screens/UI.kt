@@ -1,4 +1,4 @@
-package com.example.weatherpulse.screens
+package com.example.weatherpulse.domain.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -28,7 +28,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.example.weatherpulse.data.WeatherModel
+import com.example.weatherpulse.domain.screens.models.WeatherModel
 import com.example.weatherpulse.ui.theme.BlueLight
 
 @Composable
@@ -40,7 +40,7 @@ fun MainList(list: List<WeatherModel>, currentDay : MutableState<WeatherModel>, 
     }
 }
 @Composable
-fun ListItem(item :WeatherModel,currentDay: MutableState<WeatherModel>) {
+fun ListItem(item : WeatherModel, currentDay: MutableState<WeatherModel>) {
 
     Card(
         modifier = Modifier
